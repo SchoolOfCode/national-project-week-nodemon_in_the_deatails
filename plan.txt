@@ -1,0 +1,50 @@
+potential app names:
+snippet-snap
+(paren indicates stretch goals)
+(future idea? add reflection/refactoring to existing post)
+(add image/screenshot to snippet field)
+DESKTOP FIRST
+API/DB
+--DB:
+    tables: USERS, POSTS, CREDENTIALS
+    USERS: userid, first_name, last_name, email
+    CREDENTIALS: depends_on_userid, login, password, cred_id
+    POSTS: depends_on_userid, mood, snippet, text, datetime, (tags), post_id
+(hosted on pg/heroku)
+
+--API: create express app to serve 
+--register: CREATE user write to DB name, email, password, assign username by email
+--credentials on login-- GET user verify username/email & password (store auth/cookies --check for methods to do so)
+    OR (OAUTH) -- 
+--CREATE post w/REQUIRED snippet, REQUIRED mood, OPTIONAL reflection text, +datetime
+--GET snippet post from db (map thru and display)
+(hosted on heroku)
+
+/src/components/App/App.js
+/src/components/Button/Button.js, etc.
+
+
+UI/Frontend
+REACT:
+COMPONENTS:
+Global: 
+    Button
+    InputField
+
+Login:
+    RegisterUser
+    LoginUser
+
+PostPage: 
+    SnippetInput
+    MoodInput
+    ReflectionInput
+
+Dashboard:
+    PostList
+        Post
+
+
+create login component
+fetch data from API
+map and display posts
