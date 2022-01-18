@@ -30,6 +30,7 @@ COMPONENTS:
 Global: 
     Button
     InputField
+    RadioButtons
 
 Login:
     RegisterUser
@@ -48,3 +49,51 @@ Dashboard:
 create login component
 fetch data from API
 map and display posts
+
+
+Component Tree
+- App
+    - Dashboard
+        - Post
+            - Input field (code snippet)
+                -text input
+            - Input field (reflections)
+                -text input
+        - Radio buttons
+
+
+
+
+
+App:
+    State: list of daily reflections (text)
+    Behaviours: add a reflection to the post
+                Remove a reflection from the post
+	            Render a snippet, mood, reflection inputs
+Global:
+    Button
+        State: text
+        Behaviour:
+
+   InputField
+        State: text
+        Behaviour: render an input field
+	            change of input text will update state of this component
+            
+
+RadioButton
+
+Post:
+   InputField (code snippet)
+            State: text
+            Props: submit function, delete function
+            Behaviour: render codes in a text; when submit button is clicked, call the submit function
+   RadioButtons
+            Props: input, button
+            Behaviour: render
+   InputField (reflection)
+            Props: text
+            Behaviour: takes in a text, when submit button is clicked, call the submit function
+    Button
+            Props: add function
+            Behaviour: button click will call the add function from props with value of input
