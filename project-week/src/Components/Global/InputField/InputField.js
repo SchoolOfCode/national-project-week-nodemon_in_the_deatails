@@ -1,9 +1,16 @@
-import React from 'react'
+import { useState } from "react";
 
 export default function InputField() {
-    return (
-        <div>
-            <input type="text"></input>
-        </div>
-    )
+  const [post, setPost] = useState("");
+
+  function getTextValue(userInput) {
+    setPost(userInput.target.value);
+    console.log(post);
+  }
+
+  return (
+    <div>
+      <input type="text" onChange={getTextValue}></input>
+    </div>
+  );
 }
