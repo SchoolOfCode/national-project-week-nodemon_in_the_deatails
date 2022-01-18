@@ -1,10 +1,11 @@
-import React from 'react'
+import React from "react";
 
-export default function Button({handleClick}) {
-    
-    return (
-        <div>
-            <button type="button" onClick={handleClick}></button> 
-        </div>
-    )
+export default function Button({ handleClick, buttonText }) {
+  return (
+    <div>
+      <button type="button" onClick={handleClick}>
+        {buttonText}
+      </button>
+    </div>
+  );
 }
