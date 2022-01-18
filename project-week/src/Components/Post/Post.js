@@ -4,39 +4,48 @@ import InputField from "../Global/InputField/InputField";
 import { useState, useEffect } from "react";
 
 export default function Post() {
+
+  const [postObject, setPostObject] = useState({});
+  const [codeSnippet, setCodeSnippet] = useState("");
+  const [reflectionsField, setReflectionsField] = useState("");
+  const [mood, setMood] = useState(0);
+
   useEffect(() => {
     async function fetchData() {
-      const response =
-        await fetch`https://desolate-ridge-07270.herokuapp.com/posts/3`;
+      if (postObject.length === 0){
+        return null
+      } else{
+
+      const request = new Request('https://desolate-ridge-07270.herokuapp.com/posts/3', {method: 'POST', body: JSON.stringify(postObject)});
+
+
+      const response = await fetch(request);
       const data = await response.json();
-    }
-  });
+      console.log(postObject)
+    }}
+    fetchData();
+  }, [postObject]);
 
-  const [codeSnippet, setCodeSnippet] = useState("");
-
-  function getSnippetValue(userInput) {
+  
+   function getSnippetValue(userInput) {
     setCodeSnippet(userInput.target.value);
   }
   console.log(codeSnippet);
 
-  const [reflectionsField, setReflectionsField] = useState("");
-
-  function getReflectionsValue(userInput) {
+   function getReflectionsValue(userInput) {
     setReflectionsField(userInput.target.value);
   }
   console.log(reflectionsField);
 
   function addPost(codeSnippet, reflectionsField, mood) {
-    const postObject = {
+    const post = {
       mood: mood,
       snippet: codeSnippet,
       reflection_text: reflectionsField,
     };
-    console.log(postObject);
-    return postObject;
+    setPostObject(post);
+    return post;
   }
-
-  const [mood, setMood] = useState(0);
 
   const handleClick = (e) => {
     setMood(Number(e.target.value));
