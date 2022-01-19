@@ -83,28 +83,30 @@ export default function CreatePost() {
   };
 
   return (
-    <div>
-      <h3 style={{ color: "white" }}>Your Reflection Of The Day ✨</h3>
-      <InputField
-        getTextValue={getSnippetValue}
-        style={codeSnippetStyle}
-        placeholder="//code snippet"
-      />
-      <h3 style={{ color: "white", fontSize: "1em" }}>
-        How Did You Feel Today?
-      </h3>
-      <RadioButton handleClick={handleClick} style={radioButtonStyle} />
-      <InputField
-        getTextValue={getReflectionsValue}
-        style={reflectionStyle}
-        placeholder="Your thoughts and worries go here..."
-      />
+    <div className="container">
+      <div>
+        <h3 style={{ color: "white" }}>Your Reflection Of The Day ✨</h3>
+        <InputField
+          getTextValue={getSnippetValue}
+          style={codeSnippetStyle}
+          placeholder="//code snippet"
+        />
+        <h3 style={{ color: "white", fontSize: "1em" }}>
+          How Did You Feel Today?
+        </h3>
+        <RadioButton handleClick={handleClick} style={radioButtonStyle} />
+        <InputField
+          getTextValue={getReflectionsValue}
+          style={reflectionStyle}
+          placeholder="Your thoughts and worries go here..."
+        />
 
-      <Button
-        handleClick={function () {
-          addPost(codeSnippet, reflectionsField, mood);
-        }}
-      />
+        <Button
+          handleClick={function () {
+            addPost(codeSnippet, reflectionsField, mood);
+          }}
+        />
+      </div>
     </div>
   );
 }
