@@ -2,6 +2,7 @@ import Button from "../Global/Button/Button";
 import RadioButton from "../Global/RadioButton/RadioButton";
 import InputField from "../Global/InputField/InputField";
 import { useState, useEffect } from "react";
+import "./CreatePost.css";
 
 export default function CreatePost() {
   const [postObject, setPostObject] = useState({});
@@ -63,7 +64,7 @@ export default function CreatePost() {
     borderColor: "#EFD6AC",
     display: "flex",
     justifyContent: "flex-start",
-    overflowWrap: "break-word",
+    fontFamily: "Roboto Mono",
   };
 
   const reflectionStyle = {
@@ -72,14 +73,14 @@ export default function CreatePost() {
     height: "145px",
     width: "600px",
     borderColor: "#EFD6AC",
-    overflowWrap: "break-word",
-    display: "inline",
+    fontFamily: "Merriweather",
   };
 
   const radioButtonStyle = {
     display: "flex",
     justifyContent: "flex-end",
     margin: "10px",
+    fontFamily: "Merriweather",
   };
 
   return (
