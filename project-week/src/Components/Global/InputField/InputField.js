@@ -1,18 +1,14 @@
 import "./InputField.css";
 
-export default function InputField({ getTextValue }) {
+export default function InputField({ getTextValue,style }) {
   return (
     <div className="input-field">
       <input
         type="text"
         onChange={getTextValue}
-        style={{
-          backgroundColor: "#EFD6AC",
-          borderRadius: "10px",
-          height: "115px",
-          width: "400px",
-          borderColor: "#EFD6AC",
-        }}
+        style={style
+        
+        }
       ></input>
     </div>
   );
