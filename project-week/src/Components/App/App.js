@@ -1,11 +1,10 @@
 import "./App.css";
-import CreatePost from "../CreatePost/CreatePost";
-
+import Dashboard from "../Dashboard/Dashboard";
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <CreatePost />
+        <Dashboard />
       </header>
     </div>
   );
