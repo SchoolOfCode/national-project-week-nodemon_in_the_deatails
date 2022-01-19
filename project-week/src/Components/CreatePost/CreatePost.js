@@ -55,11 +55,31 @@ export default function CreatePost() {
     setMood(Number(e.target.value));
   };
 
+  const codeSnippetStyle = {
+    backgroundColor: "#EFD6AC",
+    borderRadius: "10px",
+    height: "115px",
+    width: "400px",
+    borderColor: "#EFD6AC",
+  };
+  const reflectionStyle = {
+    backgroundColor: "#EFD6AC",
+    borderRadius: "10px",
+    height: "115px",
+    width: "400px",
+    borderColor: "#EFD6AC",
+  };
+
   return (
     <div>
-      <InputField getTextValue={getSnippetValue} />
+      <h3 style={{ color: "white" }}>Your Reflection Of The Day ✨</h3>
+      <InputField getTextValue={getSnippetValue} style={codeSnippetStyle} />
+      <h3 style={{ color: "white", fontSize: "1em" }}>
+        How Did You Feel Today?
+      </h3>
       <RadioButton handleClick={handleClick} />
-      <InputField getTextValue={getReflectionsValue} />
+      <InputField getTextValue={getReflectionsValue} style={reflectionStyle} />
+
       <Button
         handleClick={function () {
           addPost(codeSnippet, reflectionsField, mood);
@@ -69,4 +89,3 @@ export default function CreatePost() {
     </div>
   );
 }
-
