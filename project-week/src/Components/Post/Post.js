@@ -57,7 +57,11 @@ export default function Post() {
 
   return (
     <div>
+      <h3 style={{ color: "white" }}>Your Reflection Of The Day ✨</h3>
       <InputField getTextValue={getSnippetValue} />
+      <h3 style={{ color: "white", fontSize: "1em" }}>
+        How Did You Feel Today?
+      </h3>
       <RadioButton handleClick={handleClick} />
       <InputField getTextValue={getReflectionsValue} />
       <Button
@@ -69,4 +73,3 @@ export default function Post() {
     </div>
   );
 }
-
