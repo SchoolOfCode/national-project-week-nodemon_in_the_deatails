@@ -58,33 +58,49 @@ export default function CreatePost() {
   const codeSnippetStyle = {
     backgroundColor: "#EFD6AC",
     borderRadius: "10px",
-    height: "115px",
-    width: "400px",
+    height: "125px",
+    width: "250px",
     borderColor: "#EFD6AC",
+    display: "flex",
+    justifyContent: "flex-start",
   };
+
   const reflectionStyle = {
     backgroundColor: "#EFD6AC",
     borderRadius: "10px",
-    height: "115px",
-    width: "400px",
+    height: "145px",
+    width: "600px",
     borderColor: "#EFD6AC",
+  };
+
+  const radioButtonStyle = {
+    display: "flex",
+    justifyContent: "flex-end",
+    margin: "10px",
   };
 
   return (
     <div>
       <h3 style={{ color: "white" }}>Your Reflection Of The Day ✨</h3>
-      <InputField getTextValue={getSnippetValue} style={codeSnippetStyle} />
+      <InputField
+        getTextValue={getSnippetValue}
+        style={codeSnippetStyle}
+        placeholder="//code snippet"
+      />
       <h3 style={{ color: "white", fontSize: "1em" }}>
         How Did You Feel Today?
       </h3>
-      <RadioButton handleClick={handleClick} />
-      <InputField getTextValue={getReflectionsValue} style={reflectionStyle} />
+      <RadioButton handleClick={handleClick} style={radioButtonStyle} />
+      <InputField
+        getTextValue={getReflectionsValue}
+        style={reflectionStyle}
+        placeholder="Your thoughts and worries go here..."
+      />
 
       <Button
         handleClick={function () {
           addPost(codeSnippet, reflectionsField, mood);
         }}
-        buttonText="Button"
       />
     </div>
   );
