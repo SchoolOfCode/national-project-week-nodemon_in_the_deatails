@@ -7,7 +7,7 @@ const dateConvert = (date) => {
 };
 
 const PostList = ({ listOfPosts }) => {
-  console.log(listOfPosts);
+  
   return (
     <div>
       {listOfPosts.map((post) => {
