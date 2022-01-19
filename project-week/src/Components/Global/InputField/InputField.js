@@ -1,12 +1,12 @@
 export default function InputField({ getTextValue, style, placeholder }) {
   return (
     <div style={{ width: "600px" }}>
-      <input
+      <textarea
         type="text"
         onChange={getTextValue}
         style={style}
         placeholder={placeholder}
-      ></input>
+      ></textarea>
     </div>
   );
 }

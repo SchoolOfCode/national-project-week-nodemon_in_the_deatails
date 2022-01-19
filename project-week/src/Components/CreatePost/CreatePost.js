@@ -63,6 +63,7 @@ export default function CreatePost() {
     borderColor: "#EFD6AC",
     display: "flex",
     justifyContent: "flex-start",
+    overflowWrap: "break-word",
   };
 
   const reflectionStyle = {
@@ -71,6 +72,8 @@ export default function CreatePost() {
     height: "145px",
     width: "600px",
     borderColor: "#EFD6AC",
+    overflowWrap: "break-word",
+    display: "inline",
   };
 
   const radioButtonStyle = {
