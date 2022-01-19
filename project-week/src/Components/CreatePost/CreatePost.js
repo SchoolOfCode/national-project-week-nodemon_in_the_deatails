@@ -3,8 +3,7 @@ import RadioButton from "../Global/RadioButton/RadioButton";
 import InputField from "../Global/InputField/InputField";
 import { useState, useEffect } from "react";
 
-export default function Post() {
-
+export default function CreatePost() {
   const [postObject, setPostObject] = useState({});
   const [codeSnippet, setCodeSnippet] = useState("");
   const [reflectionsField, setReflectionsField] = useState("");
@@ -12,36 +11,41 @@ export default function Post() {
 
   useEffect(() => {
     async function fetchData() {
-      if (postObject.length === 0){
-        return null
-      } else{
-
-      const request = new Request('https://desolate-ridge-07270.herokuapp.com/posts/3', {method: 'POST', body: JSON.stringify(postObject)});
-
-
-      const response = await fetch(request);
-      const data = await response.json();
-      console.log(postObject)
-    }}
+      if (postObject.mood === undefined) {
+        return;
+      } else {
+        const request = new Request(
+          "https://desolate-ridge-07270.herokuapp.com/posts/3",
+          {
+            method: "POST",
+            body: JSON.stringify(postObject),
+            headers: { "Content-Type": "application/json" },
+          }
+        );
+        const response = await fetch(request);
+        const data = await response.json();
+        return data;
+      }
+    }
     fetchData();
   }, [postObject]);
 
-  
-   function getSnippetValue(userInput) {
+  function getSnippetValue(userInput) {
     setCodeSnippet(userInput.target.value);
   }
-  console.log(codeSnippet);
 
-   function getReflectionsValue(userInput) {
+  function getReflectionsValue(userInput) {
     setReflectionsField(userInput.target.value);
   }
-  console.log(reflectionsField);
 
   function addPost(codeSnippet, reflectionsField, mood) {
+    const d = new Date();
+    let today = d.toISOString();
     const post = {
       mood: mood,
       snippet: codeSnippet,
       reflection_text: reflectionsField,
+      post_date: today,
     };
     setPostObject(post);
     return post;
@@ -50,7 +54,6 @@ export default function Post() {
   const handleClick = (e) => {
     setMood(Number(e.target.value));
   };
-  console.log(mood);
 
   return (
     <div>
@@ -61,6 +64,7 @@ export default function Post() {
         handleClick={function () {
           addPost(codeSnippet, reflectionsField, mood);
         }}
+        buttonText="Button"
       />
     </div>
   );
