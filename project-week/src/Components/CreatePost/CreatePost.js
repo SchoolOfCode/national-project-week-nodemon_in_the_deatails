@@ -3,7 +3,7 @@ import RadioButton from "../Global/RadioButton/RadioButton";
 import InputField from "../Global/InputField/InputField";
 import { useState, useEffect } from "react";
 
-export default function Post() {
+export default function CreatePost() {
   const [postObject, setPostObject] = useState({});
   const [codeSnippet, setCodeSnippet] = useState("");
   const [reflectionsField, setReflectionsField] = useState("");
