@@ -63,6 +63,8 @@ export default function CreatePost() {
     width: "250px",
     borderColor: "#EFD6AC",
     fontSize: '20px',
+    fontFamily: "Roboto Mono",
+
   };
   const reflectionStyle = {
     backgroundColor: "#EFD6AC",
@@ -70,11 +72,19 @@ export default function CreatePost() {
     height: "145px",
     width: "600px",
     borderColor: "#EFD6AC",
+
     fontSize: '20px',
+
+    fontFamily: "Merriweather",
   };
-  // const radioButtonStyle = {
-  //   // margin: "10px",
-  // };
+
+  const radioButtonStyle = {
+    
+  
+    fontFamily: "Merriweather",
+
+  };
+ 
 const buttonStyle= {
  backgroundColor: "#EFD6AC",
   borderRadius: "35px",

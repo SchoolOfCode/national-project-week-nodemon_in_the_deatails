@@ -1,5 +1,5 @@
 import "./App.css";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Dashboard from "../Dashboard/Dashboard";
 import CreatePost from "../CreatePost/CreatePost";
 function App() {
