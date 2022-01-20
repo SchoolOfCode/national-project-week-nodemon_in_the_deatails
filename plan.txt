@@ -12,7 +12,7 @@ API/DB
     POSTS: depends_on_userid, mood, snippet, text, datetime, (tags), post_id
 (hosted on pg/heroku)
 
---API: create express app to serve 
+--API: create express app to serve.
 --register: CREATE user write to DB name, email, password, assign username by email
 --credentials on login-- GET user verify username/email & password (store auth/cookies --check for methods to do so)
     OR (OAUTH) -- 
