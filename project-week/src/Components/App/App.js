@@ -8,9 +8,7 @@ import { useState } from "react";
 // import useUserId from "./Hooks/useUserId";
 function App() {
   const { token, setToken } = useToken();
-  // const { userId, setUserId } = useUserId();
   const [userId, setUserId] = useState("");
-  console.log("user id at App lvl: " + userId);
   if (!token) {
     return <Login setToken={setToken} setUserId={setUserId} />;
   }

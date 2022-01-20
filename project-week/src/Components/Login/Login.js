@@ -1,42 +1,35 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 const Login = ({ setToken, setUserId }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [requestReady, setRequestReady] = useState(false);
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setRequestReady(true);
-  };
-  useEffect(() => {
-    if (!requestReady) {
+
+  const loginUser = async (creds) => {
+    const response = await fetch(
+      `https://desolate-ridge-07270.herokuapp.com/login/`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(creds),
+      }
+    );
+    const data = await response.json();
+    console.log(data);
+    if (data.token === "token-refused") {
+      alert("Invalid username or password");
       return null;
     } else {
-      const loginUser = async (creds) => {
-        const response = await fetch(
-          `https://desolate-ridge-07270.herokuapp.com/login/`,
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(creds),
-          }
-        );
-        const data = await response.json();
-        console.log(data);
-        if (data.token === "token-refused") {
-          setRequestReady(false);
-          alert("Invalid username or password");
-          return null;
-        } else {
-          setToken(data.token);
-          setUserId(data.user_id);
-        }
-      };
-      loginUser({ email: username, password: password });
+      setToken(data.token);
+      setUserId(data.user_id);
     }
-  }, [requestReady]);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    loginUser({ email: username, password: password });
+  };
   return (
     <div>
       <h1>Log In</h1>
