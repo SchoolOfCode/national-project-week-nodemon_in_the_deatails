@@ -1,10 +1,12 @@
 import Button from "../Global/Button/Button";
 import RadioButton from "../Global/RadioButton/RadioButton";
 import InputField from "../Global/InputField/InputField";
+// import { Navigate, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import "./CreatePost.css";
+import { Link } from "react-router-dom";
 
-export default function CreatePost() {
+export default function CreatePost({ userId }) {
   const [postObject, setPostObject] = useState({});
   const [codeSnippet, setCodeSnippet] = useState("");
   const [reflectionsField, setReflectionsField] = useState("");
@@ -16,7 +18,7 @@ export default function CreatePost() {
         return;
       } else {
         const request = new Request(
-          "https://desolate-ridge-07270.herokuapp.com/posts/3",
+          `https://desolate-ridge-07270.herokuapp.com/posts/${userId}`,
           {
             method: "POST",
             body: JSON.stringify(postObject),
@@ -29,7 +31,7 @@ export default function CreatePost() {
       }
     }
     fetchData();
-  }, [postObject]);
+  }, [postObject, userId]);
 
   function getSnippetValue(userInput) {
     setCodeSnippet(userInput.target.value);
@@ -49,6 +51,7 @@ export default function CreatePost() {
       post_date: today,
     };
     setPostObject(post);
+    // Navigate("/dashboard");
     return post;
   }
 
@@ -84,6 +87,7 @@ export default function CreatePost() {
     height: "50px",
     width: "150px",
     fontSize: "24px",
+    fontFamily: "Merriweather",
   };
 
   return (
@@ -108,12 +112,19 @@ export default function CreatePost() {
             placeholder="Your thoughts and worries go here..."
           />
         </div>
-        <div className="button">
+        <div className="button1">
           <Button
             handleClick={function () {
               addPost(codeSnippet, reflectionsField, mood);
             }}
             style={buttonStyle}
+            buttonText={"Submit"}
+          />{" "}
+        </div>
+        <div className="button2">
+          <Button
+            style={buttonStyle}
+            buttonText={<Link to="/dashboard">Dashboard</Link>}
           />
         </div>
       </div>

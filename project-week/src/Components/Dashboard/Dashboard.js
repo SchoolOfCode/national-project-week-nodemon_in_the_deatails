@@ -6,14 +6,15 @@ import React from "react";
 import "./Dashboard.css";
 import { Link } from "react-router-dom";
 
-const Dashboard = () => {
+const Dashboard = ({ userId }) => {
   const [listOfPosts, setListOfPosts] = useState([]);
   const [userName, setUserName] = useState("");
 
   useEffect(() => {
     async function fetchData() {
+      console.log("user id is " + userId);
       const request = new Request(
-        "https://desolate-ridge-07270.herokuapp.com/posts/3"
+        `https://desolate-ridge-07270.herokuapp.com/posts/${userId}`
       );
       const response = await fetch(request);
       const data = await response.json();
@@ -22,12 +23,12 @@ const Dashboard = () => {
     }
 
     fetchData();
-  }, []);
+  }, [userId]);
 
   useEffect(() => {
     async function fetchUserName() {
       const request = new Request(
-        "https://desolate-ridge-07270.herokuapp.com/users/1"
+        `https://desolate-ridge-07270.herokuapp.com/users/${userId}`
       );
       const response = await fetch(request);
       const data = await response.json();
@@ -36,7 +37,7 @@ const Dashboard = () => {
     }
 
     fetchUserName();
-  }, []);
+  }, [userId]);
 
   return (
     <div className="dashboard-wrapper">
