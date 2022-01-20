@@ -1,7 +1,12 @@
-export default function InputField({ getTextValue, style }) {
+export default function InputField({ getTextValue, style, placeholder }) {
   return (
-    <div>
-      <input type="text" onChange={getTextValue} style={style}></input>
+    <div >
+      <textarea
+        type="text"
+        onChange={getTextValue}
+        placeholder={placeholder}
+        style={style}
+      ></textarea>
     </div>
   );
 }
