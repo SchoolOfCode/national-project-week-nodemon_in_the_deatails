@@ -4,13 +4,7 @@ export default function Button({ handleClick, buttonText, style }) {
   return (
     <div>
       <Link to="/dashboard">
-        <button
-          type="button"
-          onClick={handleClick}
-          style={
-            style
-          }
-        >
+        <button type="button" onClick={handleClick} style={style}>
           {buttonText}
           SNIP
         </button>

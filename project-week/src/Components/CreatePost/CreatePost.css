@@ -1,63 +1,65 @@
-
-.flex-wrapper{
-display:flex;
-align-items: center;
-justify-content: center;
-
 @import url("https://fonts.googleapis.com/css2?family=Merriweather&family=Roboto+Mono&display=swap");
 
+.flex-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .create-post {
-        display: grid; 
-        grid-template-columns: 50% 50%; 
-        grid-template-rows: 1fr 1fr 1fr 1fr; 
-        gap: 30px 0px; 
-        grid-template-areas: 
-         "heading heading"
-          "code-input radio-button"
-          "reflection-input reflection-input"
-          "button button"; 
-          margin:auto;
-          height:100vh;
-      }
-     
-      .heading {
-           grid-area: heading;
-           color: white;
-           margin:auto;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "heading heading"
+    "code-input radio-button"
+    "reflection-input reflection-input"
+    "button button";
+  margin: auto;
+  height: 100vh;
+}
 
+.heading {
+  grid-area: heading;
+  color: white;
+  margin: auto;
+  /* border: 3px solid red; */
+  display: flex;
+  align-items: flex-end;
+}
 
-        }
-        h3{
-            color:white;
-            font-size: 1em;
-        }
-      
-           .code-input { grid-area: code-input;
-            background-color: "#EFD6AC";
-              display:flex;
-              justify-content:center;
-             padding-top: 40px;
-            
-            }
+h3 {
+  color: white;
+  font-size: 1em;
+  /* font-family: "Merriweather"; */
+}
 
-           .radio-button { 
-               grid-area: radio-button;
-               display: flex;
-               flex-direction: column;
+.code-input {
+  grid-area: code-input;
+  background-color: "#EFD6AC";
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+}
 
-         }
-     
-           .reflection-input { grid-area: reflection-input;
-            background-color: "#EFD6AC";
-               border-radius: "10px";
-             height: "145px";
-               width: "600px";
-              border-color: "#EFD6AC"; 
-            margin:auto;
-            }
-              
-     
-           .button { grid-area: button;
-        margin: auto;
-         }
-  
+.radio-button {
+  grid-area: radio-button;
+  display: flex;
+  flex-direction: column;
+}
+
+.reflection-input {
+  grid-area: reflection-input;
+  background-color: "#EFD6AC";
+  border-radius: "10px";
+  height: "145px";
+  width: "600px";
+  border-color: "#EFD6AC";
+  margin: auto;
+}
+
+.button {
+  grid-area: button;
+  margin: auto;
+}

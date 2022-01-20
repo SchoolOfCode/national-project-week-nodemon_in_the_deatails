@@ -1,7 +1,7 @@
-export default function RadioButton({ handleClick}) {
+export default function RadioButton({ handleClick }) {
   return (
     <div>
-      <form >
+      <form>
         <input type="radio" value="1" onChange={handleClick} name="mood" />
         😭
         <input type="radio" value="2" onChange={handleClick} name="mood" /> 😔
