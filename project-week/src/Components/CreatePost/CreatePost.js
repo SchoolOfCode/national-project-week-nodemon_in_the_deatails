@@ -2,6 +2,7 @@ import Button from "../Global/Button/Button";
 import RadioButton from "../Global/RadioButton/RadioButton";
 import InputField from "../Global/InputField/InputField";
 import { useState, useEffect } from "react";
+import "./CreatePost.css";
 
 export default function CreatePost() {
   const [postObject, setPostObject] = useState({});
@@ -61,51 +62,62 @@ export default function CreatePost() {
     height: "125px",
     width: "250px",
     borderColor: "#EFD6AC",
-    display: "flex",
-    justifyContent: "flex-start",
-    overflowWrap: "break-word",
+    fontSize: '20px',
   };
-
   const reflectionStyle = {
     backgroundColor: "#EFD6AC",
     borderRadius: "10px",
     height: "145px",
     width: "600px",
     borderColor: "#EFD6AC",
-    overflowWrap: "break-word",
-    display: "inline",
+    fontSize: '20px',
   };
-
-  const radioButtonStyle = {
-    display: "flex",
-    justifyContent: "flex-end",
-    margin: "10px",
-  };
+  // const radioButtonStyle = {
+  //   // margin: "10px",
+  // };
+const buttonStyle= {
+ backgroundColor: "#EFD6AC",
+  borderRadius: "35px",
+  borderColor: "#EFD6AC",
+  color: "#121420",
+  height: '50px',
+  width: '150px',
+  fontSize: '24px',
+}
 
   return (
-    <div className="container">
-      <div>
-        <h3 style={{ color: "white" }}>Your Reflection Of The Day ✨</h3>
+    <div className = 'flex-wrapper'>
+   <div className="create-post">
+        <h1 className="heading"  >
+        Your Reflection Of The Day 
+      </h1>
+<div className="code-input">
         <InputField
           getTextValue={getSnippetValue}
-          style={codeSnippetStyle}
           placeholder="//code snippet"
-        />
-        <h3 style={{ color: "white", fontSize: "1em" }}>
+          style = {codeSnippetStyle}
+        /></div>
+        <div className="radio-button">
+        <h3 >
           How Did You Feel Today?
         </h3>
-        <RadioButton handleClick={handleClick} style={radioButtonStyle} />
+        <RadioButton handleClick={handleClick} />
+        </div>
+        <div className= "reflection-input">
         <InputField
           getTextValue={getReflectionsValue}
-          style={reflectionStyle}
+         style= {reflectionStyle}
           placeholder="Your thoughts and worries go here..."
-        />
+        /></div>
 
+<div className="button">
         <Button
           handleClick={function () {
             addPost(codeSnippet, reflectionsField, mood);
           }}
+        style={buttonStyle}
         />
+        </div>
       </div>
     </div>
   );
