@@ -63,7 +63,18 @@ const Login = ({ setToken, setUserId }) => {
   };
 
   return (
-    <div>
+    <div
+      style={{
+        color: "white",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        width: "65vw",
+        margin: "auto",
+        fontFamily: "Merriweather",
+        marginBottom: "35px",
+      }}
+    >
       <h1>Log In</h1>
       <form onSubmit={handleSubmit}>
         <label>
@@ -77,13 +88,14 @@ const Login = ({ setToken, setUserId }) => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </label>
+
         <button type="submit">Submit</button>
       </form>
       <h6>New here?</h6>
-      <button onClick={handleCreate}> Create an account</button>
+      <button onClick={handleCreate}> Register</button>
       {revealCreate && (
         <>
-          <h2>create an account</h2>
+          <h1>Create an Account</h1>
           <p>
             The code snippet app provided an improved way to document your daily
             reflections at the School of Code. The code snippet section provides
