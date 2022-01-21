@@ -1,4 +1,4 @@
 [build]
 base = "project-week"
-publish = "src"
+publish = "project-week/build"
 command = "CI= npm run build"
