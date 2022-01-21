@@ -7,7 +7,7 @@ Please register and explore our app while we help you keep track of your learnin
 
 We've created a React frontend that fetches data from an Express backend with hosting at Netlify and Heroku respectively. Our data is stored in a Postgres database linked to the backend.
 
-The API serves routes that deliver user information, user credentials, and posts.
+The API serves endpoints that deliver user information, user credentials, and posts.
 
 Authentication checks usernames against passwords stored in database.
 
@@ -22,4 +22,4 @@ Problems solved along the way:
 Things we'd like to work on:
 
 - edge cases and error handling everywhere
-- testing!
+- testing!  
