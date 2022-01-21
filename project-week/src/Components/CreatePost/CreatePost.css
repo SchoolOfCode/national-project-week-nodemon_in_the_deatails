@@ -29,10 +29,13 @@
   align-items: flex-end;
 }
 
+h1 {
+  font-family: "Merriweather";
+}
 h3 {
   color: white;
   font-size: 1em;
-  /* font-family: "Merriweather"; */
+  font-family: "Merriweather";
 }
 
 .code-input {
