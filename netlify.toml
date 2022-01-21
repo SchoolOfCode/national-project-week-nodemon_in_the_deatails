@@ -1,4 +1,4 @@
 [build]
-base = "/opt/build/repo/project-week"
-publish = "/opt/build/repo/project-week/project-week/build"
+base = ""
+publish = "project-week/build"
 command = "CI= npm run build"
