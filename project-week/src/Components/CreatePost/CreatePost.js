@@ -27,6 +27,7 @@ export default function CreatePost({ userId }) {
         );
         const response = await fetch(request);
         const data = await response.json();
+        alert("Post created.");
         return data;
       }
     }

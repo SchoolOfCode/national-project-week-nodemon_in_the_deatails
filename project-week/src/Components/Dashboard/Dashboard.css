@@ -71,7 +71,7 @@ header {
   color: black;
   display: grid;
   grid-template-columns: 65% 35%;
-  grid-template-rows: 30% 70%;
+  grid-template-rows: 0.1fr 1fr;
   gap: 25px 5px;
   grid-template-areas:
     "code-snippet mood"
